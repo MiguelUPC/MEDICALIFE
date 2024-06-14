@@ -1,7 +1,7 @@
 // src/components/MedicGrid.jsx
 import React, { useState, useEffect } from 'react';
 import doctorService from '../services/doctorService';
-
+import SearchMedicButton from '../components/SearchMedicButton';
 
 const MedicGrid = () => {
   const [medics, setMedics] = useState([]);
@@ -33,8 +33,10 @@ const MedicGrid = () => {
 
   return (
     <div>
+
+
       <h2>Lista de Médicos</h2>
-      
+      <SearchMedicButton />
       <table>
         <thead>
           <tr>

@@ -1,5 +1,6 @@
-// controllers/medicController.js
 const sequelize = require('../config/db');
+const { Op } = require('sequelize');
+const Medic = require('../models/medicModel');
 
 // Obtener todos los médicos
 exports.getAllMedics = async (req, res) => {
@@ -26,5 +27,24 @@ exports.addMedic = async (req, res) => {
   } catch (error) {
     console.error('Error adding medic:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
+  }
+};
+
+// Buscar médicos por nombre
+exports.searchMedics = async (req, res) => {
+  const { searchText } = req.query;
+
+  try {
+    const medics = await Medic.findAll({
+      where: {
+        nombre: {
+          [Op.like]: `%${searchText}%`
+        }
+      }
+    });
+    res.json(medics);
+  } catch (error) {
+    console.error('Error al buscar médicos:', error);
+    res.status(500).json({ message: 'Error interno del servidor' });
   }
 };

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AddMedicButton from '../components/AddMedicButton';
-import SearchMedicButton from '../components/SearchMedicButton';
 import MedicGrid from '../components/MedicGrid';
 import AddSpecialtyButton from '../components/AddSpecialtyButton';
 import {Header} from '../health/components/Header';
@@ -25,7 +24,7 @@ export const Medicos = () => {
             <div>
               <h1>AGREGAR MÉDICO</h1>
               <AddMedicButton onAddMedic={addMedic} specialties={specialties} />
-              <SearchMedicButton />
+              
               <MedicGrid medics={medics} />
               <h1>AGREGAR ESPECIALIDAD</h1>
               <AddSpecialtyButton onAddSpecialty={addSpecialty} />

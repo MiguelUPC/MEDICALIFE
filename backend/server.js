@@ -25,6 +25,7 @@ app.use('/api', specialtyRoutes);
 app.use('/api', appointmentRoutes);
 app.use('/api/citas', citaRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/medics', medicRoutes);
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => {

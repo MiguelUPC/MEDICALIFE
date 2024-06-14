@@ -5,5 +5,7 @@ const medicController = require('../controllers/medicController');
 
 router.post('/medics', medicController.addMedic);
 router.get('/medics', medicController.getAllMedics);
+router.get('/search', medicController.searchMedics);
+
 
 module.exports = router;
