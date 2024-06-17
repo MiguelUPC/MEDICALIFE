@@ -9,7 +9,7 @@ const SearchPatientButton = ({ onSearch }) => {
   };
 
   const handleChange = (e) => {
-    // Actualizamos el estado del texto de búsqueda cuando cambia la texbox
+   
     setSearchText(e.target.value);
   };
 
@@ -21,7 +21,7 @@ const SearchPatientButton = ({ onSearch }) => {
         value={searchText}
         onChange={handleChange}
       />
-      {/* Podemos mantener el botón para una búsqueda manual si se desea */}
+      
       <button onClick={handleSearch}>Buscar</button>
     </div>
   );

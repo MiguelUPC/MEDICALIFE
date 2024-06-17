@@ -1,8 +1,12 @@
 import React from 'react';
 import {Header} from '../health/components/Header';
 import Box from '@mui/material/Box';
-
+import AddSpecialtyButton from '../components/AddSpecialtyButton';
 export const Especialidades = () => {
+
+  const addSpecialty = (specialty) => {
+    setSpecialties([...specialties, specialty]);
+  };
   return (
     <>
       <Box sx={{ display: 'flex' }}>
@@ -11,7 +15,8 @@ export const Especialidades = () => {
             <div>
               <br />
               <br />
-              <h1>Especialidades</h1>
+              <h1>AGREGAR ESPECIALIDAD</h1>
+              <AddSpecialtyButton onAddSpecialty={addSpecialty} />
             </div>
             </Box>
       </Box>

@@ -13,11 +13,10 @@ exports.login = async (req, res) => {
     }
 
     const isMatch = await bcrypt.compare(password, admin.Contrasena);
-    return res.status(401).json({ user: usuario, pass: password, admin: admin, isMatch: isMatch});
 
-    // if (!isMatch) {
-    //   return res.status(401).json({ message: 'Contraseña incorrecta' });
-    // }
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Contraseña incorrecta' });
+    }
 
     res.json({ message: 'Inicio de sesión exitoso', rol: admin.Rol });
   } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddMedicButton from '../components/AddMedicButton';
 import MedicGrid from '../components/MedicGrid';
-import AddSpecialtyButton from '../components/AddSpecialtyButton';
+
 import {Header} from '../health/components/Header';
 import Box from '@mui/material/Box';
 
@@ -13,9 +13,7 @@ export const Medicos = () => {
     setMedics([...medics, medic]);
   };
 
-  const addSpecialty = (specialty) => {
-    setSpecialties([...specialties, specialty]);
-  };
+ 
   return (
       <>
       <Box sx={{ display: 'flex' }}>
@@ -26,8 +24,7 @@ export const Medicos = () => {
               <AddMedicButton onAddMedic={addMedic} specialties={specialties} />
               
               <MedicGrid medics={medics} />
-              <h1>AGREGAR ESPECIALIDAD</h1>
-              <AddSpecialtyButton onAddSpecialty={addSpecialty} />
+              
             </div>
           </Box>
       </Box>
